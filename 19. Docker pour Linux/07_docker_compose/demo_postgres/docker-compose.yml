@@ -1,0 +1,42 @@
+# Déclaration des services que nous souhaitons exécuter
+# Chaque service correspond à un conteneur
+# /!\ tout conteneur initialisé dans le même docker-compose partage le même reseau
+services:
+  # docker run --name local_db -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -v local_pgdata:/var/lib/postgresql/data --network bdd-network postgres
+  db:
+    # Image à utiliser
+    image: postgres
+    container_name: local_db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+    networks:
+      - bdd-network
+
+  pgadmin:
+    depends_on:
+      - db
+    image: elestio/pgadmin
+    container_name: pgadmin4_container
+    ports:
+      - "8080:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: test@email.fr
+      PGADMIN_DEFAULT_PASSWORD: test123
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - bdd-network
+
+volumes:
+  local_pgdata:
+  pgadmin_data:
+
+networks:
+  bdd-network:
+
+# docker-compose up -d

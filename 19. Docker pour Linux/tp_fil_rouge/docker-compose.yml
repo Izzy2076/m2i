@@ -1,0 +1,15 @@
+services:
+  pipeline-runner:
+    build: .
+    container_name: pipeline-runner
+    volumes:
+      - ./data:/app/data
+    environment:
+      PYTHONUNBUFFERED: 1
+  
+  test-runner:
+    build: .
+    container_name: test-runner
+    environment:
+      PYTHONUNBUFFERED: 1
+    command: pytest tests/ -v --cov=src --cov-report=term-missing

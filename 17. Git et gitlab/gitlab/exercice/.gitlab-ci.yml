@@ -1,0 +1,120 @@
+stages:
+  - infos
+  - build
+  - test
+  - report
+  - deploy
+
+variables:
+  APP_NAME: $APP_NAME
+  APP_VERSION: $APP_VERSION
+  DEV_NAME: $DEV_NAME 
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  DOCKERHUB_PASSWORD: $DOCKERHUB_PASSWORD
+  DOCKERHUB_USERNAME: $DOCKERHUB_USERNAME
+
+show_infos:
+  stage: infos
+  tags:
+    - exercice
+  image: ubuntu:latest
+  script:
+    - echo "Application $APP_NAME"
+    - echo "Version $APP_VERSION"
+    - echo "Développeur = $DEV_NAME"
+    - echo "Branche = $CI_COMMIT_BRANCH"
+
+build_app:
+  stage: build
+  image: python:3.11
+  tags:
+    - exercice
+
+  cache:
+    key:
+      files:
+        - requirements.txt
+    paths:
+      - $PIP_CACHE_DIR
+
+  script:
+    - pip install -r requirements.txt
+    - python -m py_compile calculatrice.py
+    - echo "Build terminé !"
+
+  artifacts:
+    paths:
+      - __pycache__/
+    expire_in: "1 day"
+  
+  rules:
+    - when: always
+
+run_tests:
+  stage: test
+  tags:
+    - exercice
+  image: python:3.11
+
+  cache:
+    key:
+      files:
+        - requirements.txt
+    paths:
+      - $PIP_CACHE_DIR
+    policy: pull
+
+  script:
+    - pip install -r requirements.txt
+    - pytest test_calculatrice.py -v --junitxml=report.xml
+    - echo "Tests réussis"
+
+  artifacts:
+    paths:
+      - report.xml
+    expire_in: "1 day"
+  allow_failure: false
+
+  rules:
+    - if: "$CI_COMMIT_BRANCH == 'main' || $CI_COMMIT_BRANCH == 'dev'"
+      when: always
+
+show_report:
+  stage: report
+  image: ubuntu:latest
+  tags:
+    - exercice
+  needs:
+    - run_tests
+  script:
+    - cat report.xml
+
+deploy:
+  tags:
+    - exercice 
+  stage: deploy
+  image: docker:24
+  services:
+    - name: docker:24-dind
+      alias: docker
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""
+
+  before_script:
+    - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+
+  script:
+    - docker build -t $DOCKERHUB_USERNAME/calculatrice:latest .
+    - docker build -t $DOCKERHUB_USERNAME/calculatrice:$APP_VERSION .
+    - docker push $DOCKERHUB_USERNAME/calculatrice:latest
+    - docker push $DOCKERHUB_USERNAME/calculatrice:$APP_VERSION
+
+  after_script:
+    - docker logout
+
+  needs:
+    - run_tests
+  rules:
+    - if: "$CI_COMMIT_BRANCH == 'main'"
+      when: always

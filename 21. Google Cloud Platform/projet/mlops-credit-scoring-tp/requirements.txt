@@ -1,0 +1,40 @@
+# === 1. Core Data Manipulation & Storage (Partie 1) ===
+pandas                       # Manipulation des données et Feature Engineering
+numpy                        # Support numérique
+pyarrow                      # Nécessaire pour le format Parquet
+fastparquet                  # Alternative ou support à pyarrow pour Parquet
+scikit-learn                 # Algorithmes ML de base, préprocessing, cross-validation
+
+# === 2. Machine Learning Avancé & Optimisation (Partie 2) ===
+lightgbm                     # Modèle clé pour le scoring (performance/vitesse)
+xgboost                      # Alternative robuste pour la comparaison
+optuna                       # Optimisation avancée des hyperparamètres
+imbalanced-learn             # Gestion du déséquilibre des classes (SMOTE, etc.)
+
+# === 3. MLOps & Tracking (Partie 2 & 9) ===
+mlflow                       # Tracking d'expériences, Model Registry, Serving
+psycopg2-binary              # Connecteur PostgreSQL pour le backend MLflow
+
+# === 4. Data Quality & Interprétabilité (Partie 1 & 3) ===
+great-expectations           # Validation de la qualité et des schémas des données
+pydantic                     # Validation des schémas (utilisé aussi pour FastAPI)
+shap                         # Explication des modèles (SHAP values)
+evidently                    # Détection de Data et Model Drift (Partie 8)
+
+# === 5. API & Serving (Partie 9) ===
+fastapi                      # Framework pour l'API de prédiction
+uvicorn                      # Serveur ASGI haute performance (pour l'API)
+gunicorn                     # Serveur WSGI (souvent utilisé pour manager uvicorn en prod)
+prometheus-client            # Instrumentation de l'API pour Prometheus (Partie 8)
+
+# === 6. Orchestration de Workflows (Partie 7 - si vous travaillez avec Airflow local) ===
+apache-airflow               # (Optionnel si vous utilisez Cloud Composer ou si vous l'installez via Docker)
+# Si vous installez Airflow via pip, assurez-vous d'utiliser une version stable et les extras nécessaires, ex:
+# apache-airflow[postgres,s3,cncf.kubernetes]
+
+# === 7. Outils de Développement & Qualité (Partie 6) ===
+black                        # Formatteur de code (Pre-commit hooks)
+flake8                       # Linter de code (Pre-commit hooks)
+mypy                         # Type Checker (Pre-commit hooks)
+pytest                       # Framework de tests unitaires et d'intégration
+pytest-cov                   # Extension Pytest pour la couverture de code

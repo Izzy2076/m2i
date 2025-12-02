@@ -1,0 +1,35 @@
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+build:
+  image: python:3.11
+  tags:
+    - docker
+  
+  cache:
+    key:
+      files:
+        - requirements.txt # Hash automatique
+    paths:
+      - .cache/pip/
+
+  script:
+    - pip install -r requirements.txt
+    - python main.py
+
+test:
+  image: python:3.11
+  tags:
+    - docker
+
+  cache:
+    key:
+      files:
+        - requirements.txt # Hash automatique
+    paths:
+      - .cache/pip/
+    # Lecture seule
+    policy: pull
+
+  script:
+    - pip install -r requirements.txt

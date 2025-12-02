@@ -1,0 +1,31 @@
+stages:
+  - test
+  - deploy
+
+# Test (toujours exécuté)
+test:
+  tags:
+    - docker
+  image: ubuntu:latest
+
+  script:
+    - echo "Exécution des tests....."
+    - echo "Tests réussis !"
+
+  # Pas de règles = s'exécute sur toutes les branches
+  rules:
+    - when: always
+
+
+# Deploy (uniquement sur main)
+deploy:
+  tags:
+    - docker
+  image: ubuntu:latest
+
+  script:
+    - echo "Déploiement de l'application"
+
+  rules:
+    - if: "$CI_COMMIT_BRANCH == 'main'"
+      when: always

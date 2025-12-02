@@ -1,0 +1,11 @@
+variables:
+  MA_VARIABLE: $NON_SECRET
+  SECRET: $MON_SECRET
+
+variables_job:
+  tags:
+    - docker
+  image: ubuntu:latest
+  script:
+    - echo "ma variable non secrete = $MA_VARIABLE"
+    - echo "Le secret = $SECRET"

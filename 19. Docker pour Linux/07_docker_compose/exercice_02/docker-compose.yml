@@ -1,0 +1,58 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: employee
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - db-net
+    ports:
+      - "3307:3306"
+    env_file:
+      - .env
+  
+  phpmyadmin:
+    depends_on:
+      - db
+    container_name: phpmyadmin_container
+    image: phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+       PMA_HOST: db
+    networks:
+      - db-net
+
+  back:
+    depends_on:
+      - db
+    build: ./back_employee
+    container_name: back
+    networks:
+      - db-net
+      - front-net
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/employee
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+
+  front:
+    container_name: front
+    build: ./front_employee
+    ports:
+      - "3000:3000"
+    networks:
+      - front-net
+
+volumes:
+  db_data:
+
+networks:
+  db-net:
+  front-net:

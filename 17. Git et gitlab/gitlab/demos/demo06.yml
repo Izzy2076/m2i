@@ -1,0 +1,37 @@
+stages:
+  - test
+  - deploy
+
+# test:
+#   tags:
+#     - docker
+#   image: python:3.11
+#   script:
+#     - pip insta -r requirements.txt
+#   allow_failure: false # bloque la pipeline si échec
+
+# deploy:
+#   tags:
+#     - docker
+#   image: ubuntu:latest
+#   needs:
+#     - test
+#   script:
+#     - echo "Deploy"
+
+test:
+  tags:
+    - docker
+  image: python:3.11
+  script:
+    - pip insta -r requirements.txt
+  allow_failure: true # Ne bloque pas
+
+deploy:
+  tags:
+    - docker
+  image: ubuntu:latest
+  needs:
+    - test
+  script:
+    - echo "Deploy"

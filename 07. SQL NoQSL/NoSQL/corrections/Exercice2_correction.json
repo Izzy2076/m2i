@@ -1,0 +1,37 @@
+{
+    "_id": "La bibliothèque de Loick",
+    "livres": [
+        {
+            "id": 1,
+            "titre": "The Witcher: The Last Wish",
+            "auteur": {
+                "prenom": "Andrzej",
+                "nom": "Sapkowski"
+            },
+            "genre": "Fantasy",
+            "disponible": true
+        },
+        {
+            "id": 2,
+            "titre": "Les 12 travaux d'Hercule",
+            "auteur": {
+                "prenom": "Mythologie",
+                "nom": "Grecque"
+            },
+            "genre": "Mythologie",
+            "disponible": true
+        }
+    ],
+    "membres": [
+        {
+            "nom": "Tata Tutu",
+            "dateInscription": "2023-10-23",
+            "livresEmpruntes": [2]
+        }, 
+        {
+            "nom": "Toto Titi",
+            "dateInscription": "2022-06-06",
+            "livresEmpruntes": []
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+stages:
+  - build
+  - use_artifacts
+
+build:
+  stage: build
+  image: python:3.11
+  tags:
+    - docker
+  script:
+    - echo "Installation des dépendances..."
+    - python -m py_compile main.py
+  
+  artifacts:
+    name: "mon_app"
+    paths:
+      - __pycache__/
+      - "*.py"
+    expire_in: "1 week"
+
+use_artifact:
+    stage: use_artifacts
+    image: python:3.11
+    tags:
+      - docker
+    needs:
+      - build # les artifacts du job build sont automatiquement téléchargés
+    script:
+      - ls -la
+      - ls -la __pycache__/

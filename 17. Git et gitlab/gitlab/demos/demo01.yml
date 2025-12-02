@@ -1,0 +1,10 @@
+premier-job:
+  tags:
+    - docker
+  image: ubuntu:latest
+  script:
+    - echo "Hello World"
+    - echo "GoodBye !"
+  # Déclenchement manuel uniquement
+  when: manual
+  

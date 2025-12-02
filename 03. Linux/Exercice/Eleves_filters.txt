@@ -1,0 +1,8 @@
+Toto;19;L1
+Titi;22;L3
+Tutu;23;L2
+Tata;19;L1
+Sami;21;L3
+Samimi;22;L3
+Mimi;18;L3
+Dupont;19;L2

@@ -1,0 +1,16 @@
+premier-job:
+  tags:
+    - docker
+  image: ubuntu:latest
+  script:
+    - echo "Hello World"
+    
+
+second-job:
+  tags:
+    - docker # nom du runner
+  image: ubuntu:latest
+  script:
+    - echo "GoodBye !"
+  needs:
+    - premier-job # Attend que le premier-job soit terminé

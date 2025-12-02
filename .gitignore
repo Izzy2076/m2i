@@ -1,0 +1,73 @@
+# ------------------------------
+# Windows
+# ------------------------------
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+ehthumbs.db
+*.lnk
+~$*
+
+# ------------------------------
+# macOS
+# ------------------------------
+.DS_Store
+
+# ------------------------------
+# Python
+# ------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Pip / setuptools
+*.egg-info/
+dist/
+build/
+
+# Jupyter / notebooks
+.ipynb_checkpoints
+
+# ------------------------------
+# IDEs
+# ------------------------------
+.vscode/
+.idea/
+*.iml
+
+# ------------------------------
+# Logs / temp
+# ------------------------------
+*.log
+*.tmp
+*.bak
+
+# ------------------------------
+# Data / large files
+# ------------------------------
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.h5
+*.parquet
+*.csv
+*.sqlite
+*.db
+*.npz
+*.pth
+*.pt
+
+# Ignore data folders
+*/data/
+*/datasets/
+*/raw/
+

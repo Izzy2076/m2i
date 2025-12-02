@@ -1,0 +1,12 @@
+[
+    {
+        "prenom": "Toto",
+        "age": 25,
+        "email": "toto@email.fr"
+    },
+    {
+        "prenom": "Toto",
+        "age": 25,
+        "email": "toto@email.fr"
+    }
+]

@@ -1,0 +1,182 @@
+[
+    {
+      "titre": "The Shawshank Redemption",
+      "annee_production": 1994,
+      "genres": ["Drame"],
+      "age_limite": 12
+    },
+    {
+      "titre": "The Godfather",
+      "annee_production": 1972,
+      "genres": ["Crime", "Drame"],
+      "age_limite": 16
+    },
+    {
+      "titre": "The Dark Knight",
+      "annee_production": 2008,
+      "genres": ["Action", "Crime", "Drame"],
+      "age_limite": 12
+    },
+    {
+      "titre": "Pulp Fiction",
+      "annee_production": 1994,
+      "genres": ["Crime", "Drame"],
+      "age_limite": 18
+    },
+    {
+      "titre": "Forrest Gump",
+      "annee_production": 1994,
+      "genres": ["Drame", "Romance"],
+      "age_limite": 6
+    },
+    {
+      "titre": "Inception",
+      "annee_production": 2010,
+      "genres": ["Action", "Science-Fiction", "Thriller"],
+      "age_limite": 12
+    },
+    {
+      "titre": "The Matrix",
+      "annee_production": 1999,
+      "genres": ["Action", "Science-Fiction"],
+      "age_limite": 16
+    },
+    {
+      "titre": "Goodfellas",
+      "annee_production": 1990,
+      "genres": ["Crime", "Drame"],
+      "age_limite": 18
+    },
+    {
+      "titre": "The Lord of the Rings: The Return of the King",
+      "annee_production": 2003,
+      "genres": ["Aventure", "Drame", "Fantastique"],
+      "age_limite": 12
+    },
+    {
+      "titre": "Fight Club",
+      "annee_production": 1999,
+      "genres": ["Drame"],
+      "age_limite": 18
+    },
+    {
+      "titre": "Star Wars: Episode IV - A New Hope",
+      "annee_production": 1977,
+      "genres": ["Aventure", "Fantastique", "Science-Fiction"],
+      "age_limite": 6
+    },
+    {
+      "titre": "The Lord of the Rings: The Fellowship of the Ring",
+      "annee_production": 2001,
+      "genres": ["Aventure", "Drame", "Fantastique"],
+      "age_limite": 12
+    },
+    {
+      "titre": "Interstellar",
+      "annee_production": 2014,
+      "genres": ["Aventure", "Drame", "Science-Fiction"],
+      "age_limite": 12
+    },
+    {
+      "titre": "Spirited Away",
+      "annee_production": 2001,
+      "genres": ["Animation", "Aventure", "Famille"],
+      "age_limite": 6
+    },
+    {
+      "titre": "Parasite",
+      "annee_production": 2019,
+      "genres": ["Comédie", "Drame", "Thriller"],
+      "age_limite": 16
+    },
+    {
+      "titre": "The Lion King",
+      "annee_production": 1994,
+      "genres": ["Animation", "Aventure", "Drame"],
+      "age_limite": 3
+    },
+    {
+      "titre": "Gladiator",
+      "annee_production": 2000,
+      "genres": ["Action", "Aventure", "Drame"],
+      "age_limite": 12
+    },
+    {
+      "titre": "Titanic",
+      "annee_production": 1997,
+      "genres": ["Drame", "Romance"],
+      "age_limite": 12
+    },
+    {
+      "titre": "The Avengers",
+      "annee_production": 2012,
+      "genres": ["Action", "Aventure", "Science-Fiction"],
+      "age_limite": 12
+    },
+    {
+      "titre": "Saving Private Ryan",
+      "annee_production": 1998,
+      "genres": ["Drame", "Guerre"],
+      "age_limite": 16
+    },
+    {
+      "titre": "Jurassic Park",
+      "annee_production": 1993,
+      "genres": ["Aventure", "Science-Fiction", "Thriller"],
+      "age_limite": 12
+    },
+    {
+      "titre": "Terminator 2: Judgment Day",
+      "annee_production": 1991,
+      "genres": ["Action", "Science-Fiction", "Thriller"],
+      "age_limite": 12
+    },
+    {
+      "titre": "Schindler's List",
+      "annee_production": 1993,
+      "genres": ["Biographie", "Drame", "Histoire"],
+      "age_limite": 12
+    },
+    {
+      "titre": "The Silence of the Lambs",
+      "annee_production": 1991,
+      "genres": ["Crime", "Drame", "Thriller"],
+      "age_limite": 18
+    },
+    {
+      "titre": "E.T. the Extra-Terrestrial",
+      "annee_production": 1982,
+      "genres": ["Famille", "Science-Fiction"],
+      "age_limite": 3
+    },
+    {
+      "titre": "Casablanca",
+      "annee_production": 1942,
+      "genres": ["Drame", "Romance", "Guerre"],
+      "age_limite": 6
+    },
+    {
+      "titre": "Avatar",
+      "annee_production": 2009,
+      "genres": ["Action", "Aventure", "Science-Fiction"],
+      "age_limite": 12
+    },
+    {
+      "titre": "Raiders of the Lost Ark",
+      "annee_production": 1981,
+      "genres": ["Action", "Aventure"],
+      "age_limite": 12
+    },
+    {
+      "titre": "La La Land",
+      "annee_production": 2016,
+      "genres": ["Comédie", "Drame", "Musical"],
+      "age_limite": 6
+    },
+    {
+      "titre": "Back to the Future",
+      "annee_production": 1985,
+      "genres": ["Aventure", "Comédie", "Science-Fiction"],
+      "age_limite": 6
+    }
+]
